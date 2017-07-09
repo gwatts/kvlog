@@ -4,13 +4,13 @@
 [![Build Status](https://travis-ci.org/gwatts/kvlog.svg?branch=master)](https://travis-ci.org/gwatts/kvlog)
 
 This package provides a text formatting type for Logrus.  It is similar to the
-text formatter that comes with logrus, but is focused on compatibility with
+text formatter that comes with Logrus, but is focused on compatibility with
 logging systems such as Splunk.
 
 It provides a number of features
 
 * All fields logged as key=value format (which Splunk automatically extracts).
-* Fields are sorted into order.
+* Fields keys are sorted into lexicographical order.
 * Important/primary fields can be pinned to the start of each log entry
 so they're easy to spot.
 * Constant fields can be defined within the formatter.  For example, a build
@@ -26,19 +26,19 @@ Example usage:
 
 ```golang
 log.SetFormatter(
-		kvlog.New(
-				// include the calling function name
-				kvlog.IncludeCaller(), 
+    kvlog.New(
+        // include the calling function name
+        kvlog.IncludeCaller(), 
 
-				// ensure action and status always appear first
-				kvlog.WithPrimaryFields("action", "status")))
+        // ensure action and status always appear first
+        kvlog.WithPrimaryFields("action", "status")))
 
 log.WithFields(log.Fields{
-		"action":          "user_login",
-		"status":          "ok",
-		"username":        "joe_user",
-		"email":           "joe@example.com",
-		"active_sessions": 4,
+    "action":          "user_login",
+    "status":          "ok",
+    "username":        "joe_user",
+    "email":           "joe@example.com",
+    "active_sessions": 4,
 }).Info("User logged in")
 
 // replace the timestamp so the output is consistent
