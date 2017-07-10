@@ -3,9 +3,9 @@
 [![GoDoc](https://godoc.org/github.com/gwatts/kvlog?status.svg)](https://godoc.org/github.com/gwatts/kvlog)
 [![Build Status](https://travis-ci.org/gwatts/kvlog.svg?branch=master)](https://travis-ci.org/gwatts/kvlog)
 
-This package provides a text formatting type for Logrus.  It is similar to the
-text formatter that comes with Logrus, but is focused on compatibility with
-logging systems such as Splunk.
+This package provides a text formatting type for [Logrus](https://github.com/sirupsen/logrus).  
+It is similar to the text formatter that comes with Logrus, but is focused
+on compatibility with logging systems such as Splunk.
 
 It provides a number of features
 
